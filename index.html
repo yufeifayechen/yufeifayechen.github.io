@@ -262,7 +262,7 @@
     }
     .story:nth-child(even) { border-right: 0; }
     .story:hover { background: var(--white); transform: translateY(-3px); }
-    .story[hidden] { display: none; }
+    .story[hidden] { display: none !important; }
     .story.layout-full { grid-column: 1 / -1; border-right: 0; }
     .story.story-photo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); height: 340px; min-height: 0; padding: 0; }
     .story-photo .story-content { display: flex; flex-direction: column; justify-content: center; padding: 1.5rem 2rem; }
@@ -536,20 +536,21 @@
           <div class="section-no">01 · Selected work</div>
           <div class="section-title">
             <h2>Markets, institutions, and the people inside them.</h2>
-            <p>Selected reporting and analysis across China’s economy, corporate governance, financial regulation, technology, and the human consequences behind market data.</p>
+            <p>Selected reporting and analysis across China’s economy, U.S. business and policy, corporate governance, financial regulation, technology, and the human consequences behind market data.</p>
           </div>
         </div>
 
         <div class="filters" role="group" aria-label="Filter selected work">
           <button class="filter work-filter" type="button" data-filter="all" aria-pressed="true">All work</button>
-          <button class="filter work-filter" type="button" data-filter="economy" aria-pressed="false">China economy</button>
+          <button class="filter work-filter" type="button" data-filter="china-economy" aria-pressed="false">China economy</button>
+          <button class="filter work-filter" type="button" data-filter="us-economy" aria-pressed="false">U.S. economy</button>
           <button class="filter work-filter" type="button" data-filter="companies" aria-pressed="false">Companies &amp; markets</button>
           <button class="filter work-filter" type="button" data-filter="investigations" aria-pressed="false">Investigations</button>
           <button class="filter work-filter" type="button" data-filter="narrative" aria-pressed="false">Narrative</button>
         </div>
 
         <div class="work-grid" aria-live="polite">
-          <article class="story" data-category="economy">
+          <article class="story" data-category="china-economy">
             <div class="story-top"><span class="tag">Economy · Data</span><span class="year">2026</span></div>
             <h3>China’s Young People Trapped in “Shadow Unemployment”</h3>
             <p>An examination of the widening gap between China’s falling headline youth unemployment rate and the unstable reality facing graduates outside the official count.</p>
@@ -558,7 +559,7 @@
             </div>
           </article>
 
-          <article class="story" data-category="investigations companies">
+          <article class="story" data-category="investigations companies china-economy">
             <div class="story-top"><span class="tag">Governance · Companies</span><span class="year">2023</span></div>
             <h3>China Moves to Punish Bribe-Givers Alongside Corrupt Officials</h3>
             <p>A document-driven look at China’s expanding anti-corruption campaign and the businesses, public contracts, and enforcement systems behind power-for-money deals.</p>
@@ -568,7 +569,7 @@
             </div>
           </article>
 
-          <article class="story" data-category="companies economy">
+          <article class="story" data-category="companies">
             <div class="story-top"><span class="tag">Markets · Fintech</span><span class="year">2026</span></div>
             <h3>Permitfolio Market Briefing</h3>
             <p>Weekly reporting and editorial direction on M&amp;A, global IPO activity, AI infrastructure, cross-border payments, and the regulatory forces shaping financial markets.</p>
@@ -587,21 +588,21 @@
             </div>
           </article>
 
-          <article class="story story-photo" data-category="companies">
+          <article class="story story-photo" data-category="us-economy companies">
             <div class="story-content">
-              <div class="story-top"><span class="tag">Local business · Student reporting</span><span class="year">2026</span></div>
+              <div class="story-top"><span class="tag">U.S. economy · Local business</span><span class="year">2026</span></div>
               <h3>NYC’s $4 Million Restroom Pilot Tests Relief for Businesses</h3>
               <p>Reporting and photography from Cooper Square on whether a city contract with a private startup can ease the demand for bathrooms at nearby businesses.</p>
               <div class="story-links">
                 <a class="story-link" href="work/nyc-restroom-pilot.html">Read full article</a>
-                <a class="story-link" href="work/nyc-restroom-pilot.pdf" target="_blank" rel="noreferrer">View original PDF</a>
+                <a class="story-link" href="work/nyc-restroom-pilot.pdf" target="_blank" rel="noreferrer">View writing sample · PDF</a>
               </div>
             </div>
             <a class="story-thumb" href="work/nyc-restroom-pilot.html" aria-label="Read NYC restroom pilot article"><img src="work/cooper-square-newsstand.jpg" width="1536" height="2048" alt="Pedestrians outside Cooper Square News Corp. near the Astor Place subway entrance" loading="lazy"></a>
           </article>
         </div>
 
-        <div class="contribution" id="contributed-reporting" data-category="investigations companies" role="group" aria-label="Contributed reporting">
+        <div class="contribution" id="contributed-reporting" data-category="investigations companies china-economy" role="group" aria-label="Contributed reporting">
           <p class="contribution-label">Contributed reporting · Caixin</p>
           <div>
             <h3>How China Forestry Group’s Expansion Left It With 156.7 Billion Yuan in Liabilities</h3>
