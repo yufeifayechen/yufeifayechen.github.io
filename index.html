@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yufei (Faye) Chen | Business Journalist</title>
+  <meta name="description" content="Portfolio of Yufei (Faye) Chen, a bilingual business journalist covering China-related companies, financial markets, fintech, AI, and cross-border business.">
+  <meta name="theme-color" content="#081a2b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23081a2b'/%3E%3Cpath d='M13 18h38v6H13zm0 11h27v6H13zm0 11h38v6H13z' fill='%236ee7f5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #081a2b;
+      --ink-2: #17324a;
+      --paper: #f7f5ef;
+      --paper-2: #eeeae0;
+      --white: #fffef9;
+      --accent: #18bfd2;
+      --accent-soft: #d9f7fa;
+      --muted: #5d6972;
+      --line: rgba(8, 26, 43, 0.18);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -5rem;
+      z-index: 99;
+      padding: .7rem 1rem;
+      background: var(--white);
+      color: var(--ink);
+      border-radius: 3px;
+    }
+    .skip-link:focus { top: 1rem; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 245, 239, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .monogram {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .monogram-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      color: var(--paper);
+      background: var(--ink);
+      border-radius: 50%;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .83rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: #087d8b; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--ink);
+      border-bottom: 7px solid var(--accent);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(100deg, transparent 16%, black 100%);
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(280px, .75fr);
+      min-height: 570px;
+    }
+    .hero-copy {
+      align-self: center;
+      padding: 56px 7vw 56px 0;
+    }
+    .eyebrow {
+      margin: 0 0 1.1rem;
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    h1 {
+      margin-bottom: 1.25rem;
+      max-width: 820px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(3.4rem, 7.8vw, 7.2rem);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: .92;
+    }
+    h1 span { color: var(--accent); }
+    .hero-deck {
+      max-width: 760px;
+      margin: 0 0 1.5rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      line-height: 1.35;
+    }
+    .hero-summary {
+      max-width: 690px;
+      margin: 0;
+      color: #c9d4dd;
+      font-size: 1.03rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2.2rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .75rem 1.15rem;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      background: var(--accent);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #6ee7f5; }
+    .button.secondary { color: var(--white); background: transparent; }
+    .button.secondary:hover { color: var(--ink); background: var(--accent); }
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.3rem;
+      margin-top: 1.55rem;
+      font-size: .92rem;
+    }
+    .hero-contact a { color: #d9f7fa; text-underline-offset: 4px; }
+    .hero-contact a:hover { color: var(--white); }
+
+    .briefing {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 0 56px 2.3rem;
+      border-left: 1px solid rgba(255,255,255,.22);
+    }
+    .briefing h2 {
+      margin-bottom: 1.5rem;
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .brief-row {
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255,255,255,.2);
+    }
+    .brief-row small {
+      display: block;
+      margin-bottom: .18rem;
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .brief-row span { display: block; color: #e7edf1; font-size: .96rem; }
+
+    section { padding: 96px 0; }
+    section.hero { padding: 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-no {
+      color: #087d8b;
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-title h2 {
+      margin-bottom: .65rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.3rem, 4.4vw, 4.4rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .section-title p { max-width: 710px; margin: 0; color: var(--muted); }
+
+    .filters { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 1.6rem; }
+    .filter {
+      min-height: 42px;
+      padding: .55rem .9rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: transparent;
+      font: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter:hover, .filter[aria-pressed="true"] { border-color: var(--ink); color: var(--white); background: var(--ink); }
+    .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+    .story {
+      min-height: 330px;
+      padding: 2rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background .2s ease, transform .2s ease;
+    }
+    .story:nth-child(even) { border-right: 0; }
+    .story:hover { background: var(--white); transform: translateY(-3px); }
+    .story[hidden] { display: none; }
+    .story.layout-full { grid-column: 1 / -1; border-right: 0; }
+    .story.story-photo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); height: 340px; min-height: 0; padding: 0; }
+    .story-photo .story-content { display: flex; flex-direction: column; justify-content: center; padding: 1.5rem 2rem; }
+    .story-photo .story-top { margin-bottom: 1.15rem; }
+    .story-photo h3 { max-width: 650px; font-size: clamp(1.8rem, 2.7vw, 2.3rem); }
+    .story-photo p { max-width: 650px; margin-bottom: 1rem; font-size: .95rem; line-height: 1.45; }
+    .story-photo .story-thumb { display: block; height: 340px; min-height: 0; overflow: hidden; }
+    .story-photo .story-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
+    .story-top { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 4rem; }
+    .tag {
+      color: #087d8b;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .year { color: var(--muted); font-size: .8rem; }
+    .story h3 {
+      margin-bottom: .85rem;
+      max-width: 560px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.7rem, 3vw, 2.55rem);
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1.08;
+    }
+    .story p { max-width: 570px; margin: 0 0 1.5rem; color: var(--muted); }
+    .story-links { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; }
+    .story-link {
+      text-underline-offset: 5px;
+      text-decoration-thickness: 1px;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .contribution {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 2rem;
+      margin-top: 1.6rem;
+      padding: 1.8rem 2rem;
+      border-top: 2px solid var(--ink);
+      background: var(--paper-2);
+    }
+    .contribution[hidden] { display: none; }
+    .contribution-label {
+      margin: .2rem 0 0;
+      color: #087d8b;
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .contribution h3 {
+      margin-bottom: .25rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.65rem, 2.8vw, 2.3rem);
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+    }
+    .contribution-original { margin: 0 0 .75rem; color: var(--muted); font-size: .9rem; }
+    .contribution p:not(.contribution-original) { max-width: 790px; margin: 0 0 1rem; }
+    .contribution a { font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-underline-offset: 5px; }
+
+    .experience { color: var(--white); background: var(--ink-2); }
+    .experience .section-head { border-color: rgba(255,255,255,.24); }
+    .experience .section-title p { color: #bfcbd4; }
+    .experience .filter { color: var(--white); border-color: rgba(255,255,255,.28); }
+    .experience .filter:hover,
+    .experience .filter[aria-pressed="true"] { color: var(--ink); border-color: var(--accent); background: var(--accent); }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .experience-card {
+      grid-column: span 3;
+      min-height: 290px;
+      padding: 1.8rem;
+      background: var(--ink-2);
+    }
+    .experience-card.layout-third { grid-column: span 2; }
+    .experience-card.layout-full { grid-column: 1 / -1; }
+    .experience-card[hidden] { display: none; }
+    .experience-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--accent);
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .experience-card h3 {
+      margin-bottom: .25rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+    .experience-card .role-title { margin: 0 0 1rem; color: #e7edf1; font-size: .92rem; font-weight: 700; }
+    .experience-card ul { margin: 0; padding-left: 1.1rem; color: #c7d1d9; }
+    .experience-card li + li { margin-top: .5rem; }
+    .experience-card.film-feature { grid-column: 1 / -1; }
+    .film-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; margin-top: 1.5rem; }
+    .film-project { padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,.24); }
+    .film-project .film-type { margin: 0 0 .4rem; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .film-project h4 { margin: 0 0 .45rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; font-weight: 500; line-height: 1.25; }
+    .film-project h4 span { color: #bfcbd4; font-family: Arial, Helvetica, sans-serif; font-size: .9rem; }
+    .film-project p { max-width: 490px; margin: 0 0 .65rem; color: #c7d1d9; }
+    .film-project a { color: var(--accent); font-size: .91rem; font-weight: 700; text-underline-offset: 4px; }
+    .film-project a:hover { color: var(--white); }
+
+    .background-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .education-list { border-top: 1px solid var(--ink); }
+    .education-item { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+    .education-item header { display: flex; justify-content: space-between; gap: 1rem; }
+    .education-item h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; font-weight: 500; }
+    .education-item time { color: #087d8b; font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .education-item p { margin: .35rem 0 0; color: var(--muted); }
+    .award-panel { padding: 1.7rem; color: var(--white); background: var(--ink); }
+    .award-panel h3 { margin-bottom: 1.2rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.8rem; font-weight: 500; }
+    .award-list { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; }
+    .award-list li { display: flex; justify-content: space-between; gap: 1rem; padding-top: .8rem; border-top: 1px solid rgba(255,255,255,.2); }
+    .award-list span:last-child { flex: 0 0 auto; color: var(--accent); font-size: .78rem; font-weight: 800; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .65fr); gap: clamp(3rem, 8vw, 8rem); }
+    .about-copy p:first-child {
+      margin-top: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    .about-copy p { max-width: 760px; }
+    .fact-list { margin: 0; }
+    .fact {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .fact dt { color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .fact dd { margin: 0; font-weight: 700; }
+
+    .contact { padding: 88px 0; color: var(--white); background: #06131f; }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: end; }
+    .contact h2 {
+      margin-bottom: .75rem;
+      max-width: 820px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.7rem, 6vw, 6.2rem);
+      font-weight: 500;
+      letter-spacing: -.05em;
+      line-height: .98;
+    }
+    .contact p { max-width: 660px; margin: 0; color: #bfcbd4; }
+    .contact-links { display: flex; flex-direction: column; align-items: flex-end; gap: .65rem; }
+    .contact-links a { color: var(--accent); font-weight: 800; text-underline-offset: 5px; }
+    footer { padding: 1.4rem 0; color: #c6d0d8; background: #06131f; border-top: 1px solid rgba(255,255,255,.15); font-size: .78rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 1rem; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { padding: 56px 0 42px; }
+      .briefing { padding: 0 0 44px; border-left: 0; }
+      .section-head { grid-template-columns: 1fr; gap: .5rem; }
+      .story.story-photo { grid-template-columns: 1fr; height: auto; }
+      .story-photo .story-thumb { height: 220px; }
+      .contribution { grid-template-columns: 1fr; gap: .5rem; }
+      .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .experience-card,
+      .experience-card.layout-third,
+      .experience-card.layout-full { grid-column: auto; }
+      .background-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-links { align-items: flex-start; }
+    }
+    @media (max-width: 660px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav { min-height: 62px; }
+      .monogram strong { display: none; }
+      .nav-links { gap: .85rem; }
+      .nav-links a { font-size: .72rem; }
+      .nav-links a:nth-child(3) { display: none; }
+      .hero-grid { min-height: auto; }
+      .hero-copy { padding-top: 38px; }
+      h1 { font-size: clamp(3.3rem, 18vw, 5.2rem); }
+      section { padding: 72px 0; }
+      .work-grid { grid-template-columns: 1fr; }
+      .story-photo .story-content { padding: 1.5rem 0; }
+      .story-photo .story-thumb { height: 190px; }
+      .contribution { padding: 1.4rem; }
+      .story, .story:nth-child(even) { min-height: 0; border-right: 0; padding: 1.5rem 0; }
+      .story-top { margin-bottom: 2.5rem; }
+      .experience-grid { grid-template-columns: 1fr; }
+      .experience-card { min-height: 0; padding: 1.4rem; }
+      .film-grid { grid-template-columns: 1fr; }
+      .education-item header { flex-direction: column; gap: .25rem; }
+      .fact { grid-template-columns: 1fr; gap: .25rem; }
+      .footer-row { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="monogram" href="#top" aria-label="Yufei Chen, home">
+        <span class="monogram-mark" aria-hidden="true">YC</span>
+        <strong>Yufei Chen</strong>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#background">Background</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">NYU M.A. Student · Business and Economic Reporting</p>
+          <h1>Yufei <span>(Faye)</span> Chen</h1>
+          <p class="hero-deck">Reporting on how capital, regulation, technology, and corporate strategy shape companies and markets.</p>
+          <p class="hero-summary">A bilingual business journalist with experience across Chinese newsrooms and financial institutions, covering China-related companies, financial markets, fintech, AI, and cross-border business.</p>
+          <div class="actions">
+            <a class="button" href="#work">View selected work</a>
+            <a class="button secondary" href="Yufei_Chen_Resume_9.24.pdf" target="_blank" rel="noreferrer">View résumé</a>
+          </div>
+          <div class="hero-contact" aria-label="Contact links">
+            <a href="mailto:yc8947@nyu.edu">yc8947@nyu.edu</a>
+            <a href="https://www.linkedin.com/in/yufei-chen-nyu-ber" target="_blank" rel="noreferrer">LinkedIn profile</a>
+          </div>
+        </div>
+        <aside class="briefing" aria-label="Reporting profile">
+          <h2>Reporting brief</h2>
+          <div class="brief-row"><small>Coverage</small><span>China business, markets, financial institutions, fintech, AI</span></div>
+          <div class="brief-row"><small>Institutions</small><span>Investment banks, brokerages, wealth management</span></div>
+          <div class="brief-row"><small>Geography</small><span>China, East Asia, global capital</span></div>
+          <div class="brief-row"><small>Methods</small><span>Sources, filings, data, field reporting</span></div>
+          <div class="brief-row"><small>Languages</small><span>Mandarin Chinese, English</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">01 · Selected work</div>
+          <div class="section-title">
+            <h2>Markets, institutions, and the people inside them.</h2>
+            <p>Selected reporting and analysis across China’s economy, corporate governance, financial regulation, technology, and the human consequences behind market data.</p>
+          </div>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter selected work">
+          <button class="filter work-filter" type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter work-filter" type="button" data-filter="economy" aria-pressed="false">China economy</button>
+          <button class="filter work-filter" type="button" data-filter="companies" aria-pressed="false">Companies &amp; markets</button>
+          <button class="filter work-filter" type="button" data-filter="investigations" aria-pressed="false">Investigations</button>
+          <button class="filter work-filter" type="button" data-filter="narrative" aria-pressed="false">Narrative</button>
+        </div>
+
+        <div class="work-grid" aria-live="polite">
+          <article class="story" data-category="economy">
+            <div class="story-top"><span class="tag">Economy · Data</span><span class="year">2026</span></div>
+            <h3>China’s Young People Trapped in “Shadow Unemployment”</h3>
+            <p>An examination of the widening gap between China’s falling headline youth unemployment rate and the unstable reality facing graduates outside the official count.</p>
+            <div class="story-links">
+              <a class="story-link" href="work/yufei-chen-shadow-unemployment.pdf" target="_blank" rel="noreferrer">Read full article · PDF</a>
+            </div>
+          </article>
+
+          <article class="story" data-category="investigations companies">
+            <div class="story-top"><span class="tag">Governance · Companies</span><span class="year">2023</span></div>
+            <h3>China Moves to Punish Bribe-Givers Alongside Corrupt Officials</h3>
+            <p>A document-driven look at China’s expanding anti-corruption campaign and the businesses, public contracts, and enforcement systems behind power-for-money deals.</p>
+            <div class="story-links">
+              <a class="story-link" href="work/yufei-chen-anti-corruption.pdf" target="_blank" rel="noreferrer">Read article · PDF</a>
+              <a class="story-link" href="https://china.caixin.com/2023-12-22/102148778.html" target="_blank" rel="noreferrer">View published original</a>
+            </div>
+          </article>
+
+          <article class="story" data-category="companies economy">
+            <div class="story-top"><span class="tag">Markets · Fintech</span><span class="year">2026</span></div>
+            <h3>Permitfolio Market Briefing</h3>
+            <p>Weekly reporting and editorial direction on M&amp;A, global IPO activity, AI infrastructure, cross-border payments, and the regulatory forces shaping financial markets.</p>
+            <div class="story-links">
+              <a class="story-link" href="https://permitfolio.com/permitfolio-market-briefing" target="_blank" rel="noreferrer">Explore the briefing</a>
+            </div>
+          </article>
+
+          <article class="story" data-category="narrative">
+            <div class="story-top"><span class="tag">Narrative · Breaking news</span><span class="year">2023</span></div>
+            <h3>As a Midnight Earthquake Struck, Villages Crumbled in the Cold</h3>
+            <p>A reconstruction of the first hours after a deadly earthquake in northwestern China, drawing on survivor accounts, official data, and reporting from affected villages.</p>
+            <div class="story-links">
+              <a class="story-link" href="work/yufei-chen-earthquake.pdf" target="_blank" rel="noreferrer">Read article · PDF</a>
+              <a class="story-link" href="https://mini.caixin.com/m/2024-12-18/102269328.html" target="_blank" rel="noreferrer">View published original</a>
+            </div>
+          </article>
+
+          <article class="story story-photo" data-category="companies">
+            <div class="story-content">
+              <div class="story-top"><span class="tag">Local business · Student reporting</span><span class="year">2026</span></div>
+              <h3>NYC’s $4 Million Restroom Pilot Tests Relief for Businesses</h3>
+              <p>Reporting and photography from Cooper Square on whether a city contract with a private startup can ease the demand for bathrooms at nearby businesses.</p>
+              <div class="story-links">
+                <a class="story-link" href="work/nyc-restroom-pilot.html">Read full article</a>
+                <a class="story-link" href="work/nyc-restroom-pilot.pdf" target="_blank" rel="noreferrer">View original PDF</a>
+              </div>
+            </div>
+            <a class="story-thumb" href="work/nyc-restroom-pilot.html" aria-label="Read NYC restroom pilot article"><img src="work/cooper-square-newsstand.jpg" width="1536" height="2048" alt="Pedestrians outside Cooper Square News Corp. near the Astor Place subway entrance" loading="lazy"></a>
+          </article>
+        </div>
+
+        <div class="contribution" id="contributed-reporting" data-category="investigations companies" role="group" aria-label="Contributed reporting">
+          <p class="contribution-label">Contributed reporting · Caixin</p>
+          <div>
+            <h3>China Forestry Group investigation</h3>
+            <p class="contribution-original" lang="zh-Hans">财新《特稿｜一家央企的被托管之路》 · 2024</p>
+            <p>During my Caixin internship, I supported the investigation by reviewing annual reports and filings, organizing interview recordings and source materials, cross-checking inconsistencies, reconstructing timelines, and drafting sections during reporting. The published article carries Zhou Tailai’s byline.</p>
+            <a href="https://companies.caixin.com/2024-10-02/102242182.html" target="_blank" rel="noreferrer">Read the published investigation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">02 · Experience</div>
+          <div class="section-title">
+            <h2>Reporting experience with market fluency.</h2>
+            <p>Reporting, market research, visual storytelling, and leadership work across Beijing, Shanghai, Hong Kong, Singapore, and New York.</p>
+          </div>
+        </div>
+        <div class="filters" role="group" aria-label="Filter experience">
+          <button class="filter experience-filter" type="button" data-filter="all" aria-pressed="true">All experience</button>
+          <button class="filter experience-filter" type="button" data-filter="editorial" aria-pressed="false">Journalism &amp; editorial</button>
+          <button class="filter experience-filter" type="button" data-filter="markets" aria-pressed="false">Financial &amp; business</button>
+          <button class="filter experience-filter" type="button" data-filter="visual" aria-pressed="false">Broadcast &amp; film</button>
+          <button class="filter experience-filter" type="button" data-filter="research" aria-pressed="false">Research</button>
+          <button class="filter experience-filter" type="button" data-filter="leadership" aria-pressed="false">Leadership</button>
+          <button class="filter experience-filter" type="button" data-filter="international" aria-pressed="false">International programs</button>
+        </div>
+
+        <div class="experience-grid" aria-live="polite">
+          <article class="experience-card" data-track="editorial">
+            <div class="experience-meta"><span>Beijing, China</span><span>Dec 2023 to Mar 2024</span></div>
+            <h3>Caixin Media</h3>
+            <p class="role-title">Trainee Journalist</p>
+            <ul>
+              <li>Reported 2 to 3 stories per week on Chinese corporations and financial developments through interviews, document analysis, and rapid fact-checking.</li>
+              <li>Reviewed annual reports, regulatory filings, internal materials, and interview records to uncover inconsistencies and reconstruct key timelines.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="editorial">
+            <div class="experience-meta"><span>Beijing, China</span><span>Jul to Sep 2023</span></div>
+            <h3>China Finance 40 Forum</h3>
+            <p class="role-title">Editorial and Video Intern</p>
+            <ul>
+              <li>Produced business news videos on China’s economic recovery, industrial policy, and financial markets, with selected work reaching 10,000+ views on WeChat.</li>
+              <li>Planned the “Life Begins at Forty” podcast feature, supported the Bund Financial Summit, and interviewed industry leaders at forums and press briefings.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="editorial">
+            <div class="experience-meta"><span>Beijing, China</span><span>Sep to Dec 2022</span></div>
+            <h3>CICC Research Department</h3>
+            <p class="role-title">New Media Operations Intern</p>
+            <ul>
+              <li>Edited, designed, and published 50+ research reports for a flagship column, covering financial and industry topics including power and artificial intelligence.</li>
+              <li>Compiled five interview transcripts based on conversations with industry experts and researchers.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="editorial">
+            <div class="experience-meta"><span>Beijing, China</span><span>Nov 2020 to Apr 2021</span></div>
+            <h3>Sina Finance</h3>
+            <p class="role-title">Financial Media Relations Intern</p>
+            <ul>
+              <li>Supported planning and press materials for a major Sina financial forum and expanded a media library covering 1,000+ outlets.</li>
+              <li>Contacted 40+ national financial media organizations for project and editorial cooperation.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="visual">
+            <div class="experience-meta"><span>Shaanxi, China</span><span>Jul to Aug 2019</span></div>
+            <h3>Shaanxi Provincial Television</h3>
+            <p class="role-title">Newsroom Intern</p>
+            <ul>
+              <li>Interviewed local officials and rural residents for a television series examining how China’s poverty-reduction policies affected communities on the ground.</li>
+              <li>Worked with local TV crews on interview preparation, field shoots, writing, and editing, helping turn national policy into stories grounded in residents’ experiences.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="markets">
+            <div class="experience-meta"><span>New York, Remote</span><span>Jan to Aug 2026</span></div>
+            <h3>Permitfolio</h3>
+            <p class="role-title">Marketing and Content Strategy Lead</p>
+            <ul>
+              <li>Led research and editorial production for a weekly briefing on M&amp;A, global IPOs, AI infrastructure, cross-border payments, and regulatory developments.</li>
+              <li>Produced 2 to 3 press releases per month and managed weekly fintech, RegTech, and compliance content.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="markets">
+            <div class="experience-meta"><span>Shanghai, China</span><span>Jul to Dec 2024</span></div>
+            <h3>Huatai Securities</h3>
+            <p class="role-title">Financial Advisor and Content Operations Associate</p>
+            <ul>
+              <li>Produced 30+ livestreams, 30+ financial news articles, 20+ market videos, and 50+ reports and commentaries on equities, funds, and macroeconomic trends.</li>
+              <li>Managed client groups totaling nearly 2,000 members and supported publicity for strategic conferences and product launches.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="markets">
+            <div class="experience-meta"><span>Hong Kong, China</span><span>Mar to Apr 2024</span></div>
+            <h3>CICC Wealth Management</h3>
+            <p class="role-title">Content Operations Intern</p>
+            <ul>
+              <li>Wrote 30+ scripts for market news and investor-education videos on China’s IPO registration system, valuation, trading strategies, and market trends.</li>
+              <li>Created 50+ training decks on investment products, macro analysis, derivatives, and client acquisition for investment advisors.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="research">
+            <div class="experience-meta"><span>Graduate Research</span><span>Jul 2023 to May 2024</span></div>
+            <h3>Social Media Search</h3>
+            <p class="role-title">Study on Emotional Motives Behind Search Behavior</p>
+            <ul>
+              <li>Studied how overseas students use RedNote for social media search, combining the Cognitive-Affective-Conative model with cultural shock, technology acceptance, social support, risk, and trust.</li>
+              <li>Designed a questionnaire and analyzed survey data using SPSS and AMOS.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="research">
+            <div class="experience-meta"><span>CUC Key Laboratory</span><span>Sep 2021 to Jun 2024</span></div>
+            <h3>Media Integration Research</h3>
+            <p class="role-title">Research Assistant</p>
+            <ul>
+              <li>Contributed to a 5G converged media industry bluebook and wrote 60+ public-opinion monitoring reports for Beijing Radio and Television.</li>
+              <li>Developed response recommendations for public-opinion crises and strategic content for media and public-relations organizations.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="research">
+            <div class="experience-meta"><span>Independent Research</span><span>Oct 2019 to May 2020</span></div>
+            <h3>Feminism and Otome Games</h3>
+            <p class="role-title">Research on Immersive Communication</p>
+            <ul>
+              <li>Examined the rise of women-centered games through feminism, the female consumer economy, social needs, and immersive communication.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="research">
+            <div class="experience-meta"><span>Independent Research</span><span>Mar to Sep 2020</span></div>
+            <h3>Marriage and Love Television</h3>
+            <p class="role-title">Study of Programs in Convergent Media</p>
+            <ul>
+              <li>Mapped the development of marriage-themed programming, analyzed its emotional drivers and weaknesses, and evaluated innovations in communication methods.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="international">
+            <div class="experience-meta"><span>Online Program</span><span>Apr to May 2023</span></div>
+            <h3>Northwestern University</h3>
+            <p class="role-title">High-level International Talent Training Program</p>
+            <ul>
+              <li>Completed an integrated marketing communications course focused on digital products, product management, case studies, and campaign simulation.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="international">
+            <div class="experience-meta"><span>Singapore</span><span>Aug 2019</span></div>
+            <h3>National University of Singapore</h3>
+            <p class="role-title">Journalism, Communication, and New Media Visiting Program</p>
+            <ul>
+              <li>Studied global journalism, broadcast and online news writing, social media communication, and digital marketing.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="leadership">
+            <div class="experience-meta"><span>National Contest</span><span>Nov 2019</span></div>
+            <h3>Business Negotiation Winner’s Cup</h3>
+            <p class="role-title">Team Leader and Excellent Negotiator</p>
+            <ul>
+              <li>Led industry, business, and legal research for a cross-border M&amp;A negotiation strategy, winning the national championship and an individual negotiator award.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card" data-track="leadership">
+            <div class="experience-meta"><span>National Contest</span><span>Sep 2019</span></div>
+            <h3>China University Students PR Plan Contest</h3>
+            <p class="role-title">Team Leader</p>
+            <ul>
+              <li>Led research, SWOT analysis, data collection, design, copywriting, and campaign planning for a skincare brand, earning a National Award of Excellence.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card film-feature" data-track="visual">
+            <div class="experience-meta"><span>Independent projects</span><span>Film &amp; documentary</span></div>
+            <h3>Independent Director</h3>
+            <p class="role-title">Selected short film, documentary and commercial work</p>
+            <p>Visual storytelling has been part of my reporting practice from the start. These projects explore family expectations, place, everyday emotion, and unequal access to education.</p>
+            <div class="film-grid" aria-label="Film and video projects">
+              <div class="film-project">
+                <p class="film-type">Short film</p>
+                <h4>Chicken Soup <span lang="zh-Hans">《鸡汤》</span></h4>
+                <p>An accomplished woman faces family pressure to marry after returning from overseas study. A painful relationship leads her to question the expectations others have set for her life.</p>
+                <a href="https://m.v.qq.com/x/m/play?vid=i3144iujbnq&amp;cid=&amp;ptag=share_11_11&amp;pageStyle=immersive_first_page&amp;pageType=immerse" target="_blank" rel="noreferrer" aria-label="Watch Chicken Soup short film">Watch short film</a>
+              </div>
+              <div class="film-project">
+                <p class="film-type">Documentary</p>
+                <h4>Tea, the Story of a Leaf <span lang="zh-Hans">《茶，一片树叶的故事》</span></h4>
+                <p>Filmed during the spring Biluochun harvest in Suzhou’s Xishan, this documentary follows tea-growing families and the traditions woven into their daily lives.</p>
+                <a href="https://m.v.qq.com/x/m/play?vid=y31441ukssv&amp;cid=&amp;ptag=share_11_11&amp;pageStyle=immersive_first_page&amp;pageType=immerse" target="_blank" rel="noreferrer" aria-label="Watch Tea, the Story of a Leaf documentary">Watch documentary</a>
+              </div>
+              <div class="film-project">
+                <p class="film-type">Commercial</p>
+                <h4>I Like You in Silence <span lang="zh-Hans">《我喜欢你是寂静的》</span></h4>
+                <p>A commercial for Wahaha AD Calcium Milk that turns the product’s packaging into a small fortune-telling flag in a playful story about a crush.</p>
+                <a href="https://m.v.qq.com/x/m/play?vid=i3144emeqe7&amp;cid=&amp;ptag=share_11_11&amp;pageStyle=immersive_first_page&amp;pageType=immerse" target="_blank" rel="noreferrer" aria-label="Watch I Like You in Silence commercial">Watch commercial</a>
+              </div>
+              <div class="film-project">
+                <p class="film-type">Documentary · 2020</p>
+                <h4>An Unusual Start to School <span lang="zh-Hans">《不寻常的开学》</span></h4>
+                <p>Independently planned, filmed and edited in Hanyin, Shaanxi, during the pandemic. It follows a student from a low-income family who traveled for reliable internet to attend remote classes, revealing the uneven conditions behind online schooling.</p>
+                <a href="https://article.xuexi.cn/articles/index.html?part_id=15650859023968991886&amp;art_id=15650859023968991886&amp;item_id=15650859023968991886&amp;study_style_id=video_default&amp;pid=&amp;ptype=-1&amp;source=share&amp;share_to=wx_single&amp;from=singlemessage&amp;isappinstalled=0" target="_blank" rel="noreferrer" aria-label="Watch An Unusual Start to School documentary">Watch documentary</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">03 · Education &amp; awards</div>
+          <div class="section-title">
+            <h2>Journalism training, financial coursework, and research.</h2>
+            <p>An academic foundation spanning business reporting, communication research, broadcasting, and quantitative analysis.</p>
+          </div>
+        </div>
+        <div class="background-grid">
+          <div class="education-list">
+            <article class="education-item">
+              <header><h3>New York University</h3><time>Expected May 2028</time></header>
+              <p>M.A. in Business and Economic Reporting, combining journalism training at the Arthur L. Carter Journalism Institute with finance coursework at NYU Stern.</p>
+            </article>
+            <article class="education-item">
+              <header><h3>Communication University of China</h3><time>2021 to 2024</time></header>
+              <p>M.A. in Communication, GPA 3.69 out of 4.0, with research in social media search, media integration, and public opinion.</p>
+            </article>
+            <article class="education-item">
+              <header><h3>Nanjing University of Aeronautics and Astronautics</h3><time>2017 to 2021</time></header>
+              <p>B.A. in Broadcasting and Television Studies, GPA 4.0 out of 5.0, ranked 2nd of 34 students.</p>
+            </article>
+          </div>
+          <aside class="award-panel" aria-label="Honors and awards">
+            <h3>Honors &amp; awards</h3>
+            <ul class="award-list">
+              <li><span>CUC Excellent Student Scholarship</span><span>2021, 2022, 2023</span></li>
+              <li><span>Excellent Graduate Award</span><span>2021</span></li>
+              <li><span>NUAA National Scholarship</span><span>2020</span></li>
+              <li><span>Top 100 Youth Award</span><span>2020</span></li>
+              <li><span>President’s List</span><span>2019</span></li>
+              <li><span>Merit Student Award</span><span>2017 to 2020</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">04 · About</div>
+          <div class="section-title"><h2>Reporting across languages and financial systems.</h2></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>我关注资本、监管、技术与企业战略如何塑造公司、市场与普通人的选择。<br>I report on how capital, regulation, technology, and corporate strategy shape companies, markets, and everyday decisions.</p>
+            <p>At Caixin, an investigation into a struggling state-owned enterprise taught me to look beyond official narratives. By reconciling regulatory filings, internal documents, and conflicting records, I traced how weak oversight, failed trade-financing arrangements, and unsuccessful investments contributed to the company’s near-collapse.</p>
+            <p>Work in Chinese newsrooms and financial institutions has shown me both how market narratives are produced and how reporters can test them. At NYU, I am expanding that foundation through business reporting, finance, economics, accounting, and data, with the goal of producing rigorous, accessible journalism for global audiences.</p>
+          </div>
+          <dl class="fact-list">
+            <div class="fact"><dt>Based in</dt><dd>New York metropolitan area</dd></div>
+            <div class="fact"><dt>Education</dt><dd>NYU M.A. in Business &amp; Economic Reporting</dd></div>
+            <div class="fact"><dt>Prior degrees</dt><dd>M.A. Communication · B.A. Broadcasting &amp; Television</dd></div>
+            <div class="fact"><dt>Skills</dt><dd>Breaking news, long-form reporting, copy editing, social media</dd></div>
+            <div class="fact"><dt>Data &amp; media</dt><dd>Excel, SPSS, AMOS, Premiere Pro, Photoshop</dd></div>
+            <div class="fact"><dt>Credentials</dt><dd>China securities and fund practitioner qualifications · CPBA Business Analyst, ESG</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk business journalism.</h2>
+          <p>Available for reporting opportunities and editorial collaborations involving China-related business, companies, markets, fintech, AI, and cross-border finance.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:yc8947@nyu.edu">yc8947@nyu.edu</a>
+          <a href="https://www.linkedin.com/in/yufei-chen-nyu-ber" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year">2026</span> Yufei (Faye) Chen</span>
+      <span>Business journalism across markets, institutions, and borders</span>
+    </div>
+  </footer>
+
+  <script>
+    const workFilterButtons = [...document.querySelectorAll('.work-filter')];
+    const stories = [...document.querySelectorAll('.story')];
+    const contribution = document.querySelector('.contribution');
+    const experienceFilterButtons = [...document.querySelectorAll('.experience-filter')];
+    const experienceCards = [...document.querySelectorAll('.experience-card')];
+
+    workFilterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.filter;
+        workFilterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        stories.forEach((story) => {
+          const categories = story.dataset.category.split(' ');
+          story.hidden = selected !== 'all' && !categories.includes(selected);
+        });
+        contribution.hidden = selected !== 'all' && !contribution.dataset.category.split(' ').includes(selected);
+        updateWorkLayout();
+      });
+    });
+
+    experienceFilterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.filter;
+        experienceFilterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        experienceCards.forEach((card) => {
+          card.hidden = selected !== 'all' && card.dataset.track !== selected;
+        });
+        updateExperienceLayout();
+      });
+    });
+
+    function updateWorkLayout() {
+      stories.forEach((story) => story.classList.remove('layout-full'));
+      const visibleStories = stories.filter((story) => !story.hidden);
+      if (visibleStories.length % 2 === 1) visibleStories.at(-1).classList.add('layout-full');
+    }
+
+    function updateExperienceLayout() {
+      experienceCards.forEach((card) => card.classList.remove('layout-third', 'layout-full'));
+      const regularCards = experienceCards.filter((card) => !card.hidden && !card.classList.contains('film-feature'));
+      if (regularCards.length === 1) {
+        regularCards[0].classList.add('layout-full');
+      } else if (regularCards.length % 2 === 1) {
+        regularCards.slice(-3).forEach((card) => card.classList.add('layout-third'));
+      }
+    }
+
+    updateWorkLayout();
+    updateExperienceLayout();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
