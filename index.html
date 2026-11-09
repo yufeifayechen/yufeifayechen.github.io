@@ -271,6 +271,7 @@
     .story-photo p { max-width: 650px; margin-bottom: 1rem; font-size: .95rem; line-height: 1.45; }
     .story-photo .story-thumb { display: block; height: 340px; min-height: 0; overflow: hidden; }
     .story-photo .story-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
+    .story.story-published-feature { grid-column: 1 / -1; border-right: 0; }
     .story-top { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 4rem; }
     .tag {
       color: #087d8b;
@@ -592,6 +593,18 @@
         </div>
 
         <div class="work-grid" aria-live="polite">
+          <article class="story story-photo story-published-feature" data-category="us-economy companies">
+            <div class="story-content">
+              <div class="story-top"><span class="tag">Published reporting · Urban development</span><span class="year">2026</span></div>
+              <h3>Apartments Upstairs, Shops Downstairs: New Life for Old Buildings</h3>
+              <p>Reporting from Scranton on how historic offices, hotels and industrial buildings are becoming apartments and mixed-use properties, creating new customers for local shops while renovation costs and gaps in everyday services remain.</p>
+              <div class="story-links">
+                <a class="story-link" href="https://coopersquare.journalism.nyu.edu/scranton-affordability-midterms-2026/" target="_blank" rel="noreferrer">Read published article</a>
+              </div>
+            </div>
+            <a class="story-thumb" href="https://coopersquare.journalism.nyu.edu/scranton-affordability-midterms-2026/" target="_blank" rel="noreferrer" aria-label="Read the published Scranton mixed-use development article"><img src="work/scranton-mixed-use.jpg" width="702" height="936" alt="Historic buildings and street-level businesses in downtown Scranton, Pennsylvania, photographed by Yufei Chen" loading="lazy"></a>
+          </article>
+
           <article class="story" data-category="china-economy">
             <div class="story-top"><span class="tag">Economy · Data</span><span class="year">2026</span></div>
             <h3>China’s Young People Trapped in “Shadow Unemployment”</h3>
@@ -1000,7 +1013,7 @@
 
     function updateWorkLayout() {
       stories.forEach((story) => story.classList.remove('layout-full'));
-      const visibleStories = stories.filter((story) => !story.hidden);
+      const visibleStories = stories.filter((story) => !story.hidden && !story.classList.contains('story-published-feature'));
       if (visibleStories.length % 2 === 1) visibleStories.at(-1).classList.add('layout-full');
     }
 
